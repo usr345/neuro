@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Нейросимулятор</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="main.js"></script>
+		<link type="text/css" rel="stylesheet" media="all" href="page.css">
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<div class="button"><input type="button" onclick="update_sensors()" value="Пуск"></div>
+
+		<div class="container">
+		<table cellspacing="0" cellpadding="4" border="1">
+			<caption>Сенсорное поле</caption>
+			<tbody>
+				<tr>
+					<td colspan="3">Порог: <input type="text" name="threshold" id="threshold" /></td>
+				</tr>
+				<tr>
+					<td>7: <input type="text" name="sensor6" id="sensor6" /></td>
+					<td>8: <input type="text" name="sensor7" id="sensor7" /></td>
+					<td>9: <input type="text" name="sensor8" id="sensor8" /></td>
+				</tr>
+				<tr>
+					<td>4: <input type="text" name="sensor3" id="sensor3" /></td>
+					<td>5: <input type="text" name="sensor4" id="sensor4" /></td>
+					<td>6: <input type="text" name="sensor5" id="sensor5" /></td>
+				</tr>
+				<tr>
+					<td>1: <input type="text" name="sensor0" id="sensor0" /></td>
+					<td>2: <input type="text" name="sensor1" id="sensor1" /></td>
+					<td>3: <input type="text" name="sensor2" id="sensor2" /></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table width="" cellspacing="" cellpadding="" border="">
+			<caption>Синапсы</caption>
+			<thead>
+				<tr>
+					<td></td>
+					<th>1</th>
+					<th>2</th>
+					<th>3</th>
+					<th>4</th>
+					<th>5</th>
+					<th>6</th>
+				</tr>
+
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td><input type="text" name="synapse0_0" id="synapse0_0" /></td>
+					<td><input type="text" name="synapse0_1" id="synapse0_1" /></td>
+					<td><input type="text" name="synapse0_2" id="synapse0_2" /></td>
+					<td><input type="text" name="synapse0_3" id="synapse0_3" /></td>
+					<td><input type="text" name="synapse0_4" id="synapse0_4" /></td>
+					<td><input type="text" name="synapse0_5" id="synapse0_5" /></td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td><input type="text" name="synapse1_0" id="synapse1_0" /></td>
+					<td><input type="text" name="synapse1_1" id="synapse1_1" /></td>
+					<td><input type="text" name="synapse1_2" id="synapse1_2" /></td>
+					<td><input type="text" name="synapse1_3" id="synapse1_3" /></td>
+					<td><input type="text" name="synapse1_4" id="synapse1_4" /></td>
+					<td><input type="text" name="synapse1_5" id="synapse1_5" /></td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td><input type="text" name="synapse2_0" id="synapse2_0" /></td>
+					<td><input type="text" name="synapse2_1" id="synapse2_1" /></td>
+					<td><input type="text" name="synapse2_2" id="synapse2_2" /></td>
+					<td><input type="text" name="synapse2_3" id="synapse2_3" /></td>
+					<td><input type="text" name="synapse2_4" id="synapse2_4" /></td>
+					<td><input type="text" name="synapse2_5" id="synapse2_5" /></td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td><input type="text" name="synapse3_0" id="synapse3_0" /></td>
+					<td><input type="text" name="synapse3_1" id="synapse3_1" /></td>
+					<td><input type="text" name="synapse3_2" id="synapse3_2" /></td>
+					<td><input type="text" name="synapse3_3" id="synapse3_3" /></td>
+					<td><input type="text" name="synapse3_4" id="synapse3_4" /></td>
+					<td><input type="text" name="synapse3_5" id="synapse3_5" /></td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td><input type="text" name="synapse4_0" id="synapse4_0" /></td>
+					<td><input type="text" name="synapse4_1" id="synapse4_1" /></td>
+					<td><input type="text" name="synapse4_2" id="synapse4_2" /></td>
+					<td><input type="text" name="synapse4_3" id="synapse4_3" /></td>
+					<td><input type="text" name="synapse4_4" id="synapse4_4" /></td>
+					<td><input type="text" name="synapse4_5" id="synapse4_5" /></td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td><input type="text" name="synapse5_0" id="synapse5_0" /></td>
+					<td><input type="text" name="synapse5_1" id="synapse5_1" /></td>
+					<td><input type="text" name="synapse5_2" id="synapse5_2" /></td>
+					<td><input type="text" name="synapse5_3" id="synapse5_3" /></td>
+					<td><input type="text" name="synapse5_4" id="synapse5_4" /></td>
+					<td><input type="text" name="synapse5_5" id="synapse5_5" /></td>
+				</tr>
+				<tr>
+					<td>7</td>
+					<td><input type="text" name="synapse6_0" id="synapse6_0" /></td>
+					<td><input type="text" name="synapse6_1" id="synapse6_1" /></td>
+					<td><input type="text" name="synapse6_2" id="synapse6_2" /></td>
+					<td><input type="text" name="synapse6_3" id="synapse6_3" /></td>
+					<td><input type="text" name="synapse6_4" id="synapse6_4" /></td>
+					<td><input type="text" name="synapse6_5" id="synapse6_5" /></td>
+				</tr>
+				<tr>
+					<td>8</td>
+					<td><input type="text" name="synapse7_0" id="synapse7_0" /></td>
+					<td><input type="text" name="synapse7_1" id="synapse7_1" /></td>
+					<td><input type="text" name="synapse7_2" id="synapse7_2" /></td>
+					<td><input type="text" name="synapse7_3" id="synapse7_3" /></td>
+					<td><input type="text" name="synapse7_4" id="synapse7_4" /></td>
+					<td><input type="text" name="synapse7_5" id="synapse7_5" /></td>
+				</tr>
+				<tr>
+					<td>9</td>
+					<td><input type="text" name="synapse8_0" id="synapse8_0" /></td>
+					<td><input type="text" name="synapse8_1" id="synapse8_1" /></td>
+					<td><input type="text" name="synapse8_2" id="synapse8_2" /></td>
+					<td><input type="text" name="synapse8_3" id="synapse8_3" /></td>
+					<td><input type="text" name="synapse8_4" id="synapse8_4" /></td>
+					<td><input type="text" name="synapse8_5" id="synapse8_5" /></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table width="" cellspacing="" cellpadding="4" border="1">
+			<caption>Выходы нейронов</caption>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td><input type="text" name="neuron0" id="neuron0" /></td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td><input type="text" name="neuron1" id="neuron1" /></td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td><input type="text" name="neuron2" id="neuron2" /></td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td><input type="text" name="neuron3" id="neuron3" /></td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td><input type="text" name="neuron1" id="neuron4" /></td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td><input type="text" name="neuron1" id="neuron5" /></td>
+				</tr>
+			</tbody>
+		</table>
+		</div>
+	</body>
+</html>
